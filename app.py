@@ -156,7 +156,10 @@ if select_event == 'Short-time Fourier Transform (STFT)':
         st.markdown("""---""")
         annotated_text(("How?!", "", "#afa"),
                        height=40)
-        st.header("Let's Break it down")
+        st.warning("For full details, please refer our codebase: https://github.com/Lawliet19189/Dirichlet")
+        st.warning(
+            "and Interactive graphs, audio representations, time and frequency graphs are visualized in the below report. Please check it out at our [wandb report](https://wandb.ai/srivardhamanan/learnable-istft/reports/Learned-inverse-transform-of-STFT--Vmlldzo4MTU5MjI?accessToken=tdxzsmd5f23l7gh5zafzqdkb7q2looljs7ij6012wt78b7z7j60r40buqee14kmu)")
+        st.header("Btw Let's Break it down")
         annotated_text(("Data?!", "", "#fea"),
                        height=40)
         st.info(
@@ -190,7 +193,10 @@ if select_event == 'Short-time Fourier Transform (STFT)':
                        height=40)
         annotated_text(("Batch_size:", "", "#faa"),
                        ("1 with Gradient Accumulation of 64 samples", "", "#8ef"),
-                       height=80)
+                       height=40)
+        annotated_text(("Model Weight Initialization:", "", "#faa"),
+                       ("He initialization", "", "#8ef"),
+                       height=40)
 
         st.markdown("""---""")
         annotated_text(("STFT parameter configurations!", "", "#fea"),
@@ -202,6 +208,25 @@ if select_event == 'Short-time Fourier Transform (STFT)':
         annotated_text(("Window Algorithm:", "", "#faa"),
                        ("Hamming with overlap of 40", "", "#8ef"),
                        height=80)
+
+        st.markdown("""---""")
+        st.markdown("""---""")
+        annotated_text(("Training Results!", "", "#afa"),
+                       height=40)
+        annotated_text(("Training Data MSE loss comparing to original signal:", "", "#faa"), ("~2e-17", "", "#8ef"),
+                       height=40)
+        annotated_text(("Validation Data MSE loss comparing to original signal:", "", "#faa"), ("~2e-16", "", "#8ef"),
+                       height=40)
+        annotated_text(("Test Data MSE loss comparing to original signal:", "", "#faa"),
+                       ("~2e-16", "", "#8ef"),
+                       height=40)
+        annotated_text(("Total Train time:", "", "#faa"),
+                       ("~2 Hrs", "", "#8ef"),
+                       height=40)
+        st.image("images/model_training_charts.png", use_column_width=True, caption="Training Plots")
+
+        st.warning(
+            "Interactive graphs, audio representations, time and frequency graphs are visualized in the below report. Please check it out at our [wandb report](https://wandb.ai/srivardhamanan/learnable-istft/reports/Learned-inverse-transform-of-STFT--Vmlldzo4MTU5MjI?accessToken=tdxzsmd5f23l7gh5zafzqdkb7q2looljs7ij6012wt78b7z7j60r40buqee14kmu)")
 
 
 

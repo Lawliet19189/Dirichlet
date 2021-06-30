@@ -133,3 +133,4 @@ models/*
 recordings/*
 wandb/*
 .ipynb_checkpoints/*
+.idea/*
